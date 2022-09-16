@@ -5,3 +5,10 @@ The following documents mentions required settings to run this project
 
 ### Reference Documentation
 Please set below environment variable to run this project
+### host
+### port
+### username
+### password
+
+# Run Application
+docker-compose up
