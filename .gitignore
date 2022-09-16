@@ -58,3 +58,4 @@ _project.xml
 **/_project.xml
 *.iml
 *.log
+.mvn/
