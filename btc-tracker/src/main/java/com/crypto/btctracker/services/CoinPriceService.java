@@ -20,8 +20,6 @@ public class CoinPriceService {
     @Autowired
     PriceTrackerRepository repository;
 
-
-
     public ResponseEntity<PaginatedPriceResponseObject> getPricesByDate(String coin, LocalDate date, Pageable page){
         Page<PriceTracker> resultSet = repository.findPriceTrackersByCoinNameAndDateOrderByTimestamp(coin, date, page);
         String getCurrentUrl = Utility.getInternalURL(date, coin, page.getPageNumber(), page.getOffset());
@@ -35,8 +33,6 @@ public class CoinPriceService {
               page.getPageNumber() + 1,
               Constants.PAGE_SIZE);
         }
-
-
 
         PaginatedPriceResponseObject output = new PaginatedPriceResponseObject(resultSet.getContent(), resultSet.getTotalElements(), getCurrentUrl, getNextUrl);
 
